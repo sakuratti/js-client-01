@@ -1,17 +1,22 @@
-// ここにJavaScriptコードを書く
-const tarea = document.getElementById('tarea');
+
 const input1 = document.getElementById('input1');
 const input2 = document.getElementById('input2');
 const btn = document.getElementById('btn');
 const result = document.getElementById('result');
 
 btn.addEventListener('click',()=>{
-  let findtxt = input1.value;
-  let reptxt = input2.value;
-  let tagtxt = tarea.value;
+  var number1 = input1.value;
+  var number2 = input2.value;
+  var remainder = 0;
 
-  findtxt = new RegExp(findtxt, 'g');
-  tagtxt = tagtxt.replace(findtxt, reptxt);
+  while (number1 % number2 != 0){
+    remainder = number1 % number2
+    number1 = number2
+    number2 = remainder
+  }
 
-  result.innerText = tagtxt;
+  result.innerHTML = number2
+  
+
+
 });
